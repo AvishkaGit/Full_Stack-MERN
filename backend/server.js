@@ -10,7 +10,8 @@ const router = require('./router');
 app.use(cors());
 app.use(express.json());
 
-const uri = 'mongodb+srv://avishka:Colombo@1@cluster0.i2r5wnu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri = 'mongodb://localhost:27017/DemoDm';
+
 
 const connect = async () =>{
     try{
