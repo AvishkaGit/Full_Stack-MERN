@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const port = 3001;
-const host = '127.0.0.1';
+const host = 'localhost';
 const mongoose = require('mongoose');
 const router = require('./router');
 
@@ -10,7 +10,7 @@ const router = require('./router');
 app.use(cors());
 app.use(express.json());
 
-const uri = 'mongodb://localhost:27017/DemoDm';
+const uri = 'mongodb://localhost:27017/Full_Stack-MERN';
 
 
 const connect = async () =>{
