@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {Button, Grid, Input, Typography} from "@mui/material"
 
-export default function UserForm(props) {
+export default function UserForm({ addUser,submitted }) {
 
    const [id,setId] = useState(0);
    const [name,setName] = useState('');
@@ -88,6 +88,7 @@ export default function UserForm(props) {
                     backgroundColor:'#00c6e6',
                 }
                }}
+               onClick={() => addUser({ id, name })}
              >
                 Add
              </Button>
