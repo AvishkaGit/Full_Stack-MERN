@@ -2,20 +2,28 @@ import React from 'react'
 import UserForm from './UserForm'
 import UserTable from './UserTable';
 import { Box } from '@mui/material';
+import Axios from "axios";
+import { useEffect,useState} from "react";
 
-const users =[
-  {
-    id: 1,
-    name: 'Avishka',
-  },
-  {
-    id: 2,
-    name: 'prasad',
-  }
-];
 
 
 export default function Users() {
+  
+   const [users, setUsers] = useState([]);
+
+   useEffect(() => {
+     getUsers();
+   },[]);
+
+   const getUsers = () => {
+    Axios.get('http://localhost:3001/api/users')
+       .then(response => {
+        setUsers(response?.data?.response);
+       })
+   }
+
+
+
   return (
     <Box
        sx={{
